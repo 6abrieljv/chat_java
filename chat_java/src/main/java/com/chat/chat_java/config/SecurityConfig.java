@@ -57,7 +57,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         
-        // CORREÇÃO: Usar setAllowedOriginPatterns em vez de setAllowedOrigins
+        
         // Isso permite o uso de "*" mesmo com allowCredentials(true)
         configuration.setAllowedOriginPatterns(List.of("http://localhost:*", "http://127.0.0.1:*", "*"));
         
