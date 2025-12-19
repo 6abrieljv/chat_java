@@ -59,4 +59,13 @@ public class AuthController {
         User user = userService.getUserByUsername(username);
         return ResponseEntity.ok(user);
     }
+    @GetMapping("/search")
+public ResponseEntity<User> searchUser(@RequestParam String username) {
+    try {
+        User user = userService.getUserByUsername(username);
+        return ResponseEntity.ok(user);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+}
 }
