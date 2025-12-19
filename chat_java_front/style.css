@@ -1,0 +1,110 @@
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Animar entrada de mensagens */
+.message {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.conversation-item {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Dark Mode (opcional) */
+.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .sidebar,
+.dark-mode .chat-area {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+.dark-mode .message-input {
+    background: #2d2d2d;
+    color: white;
+    border-color: #444;
+}
+
+/* Efeitos de hover */
+.send-btn:hover {
+    background: #0081d6;
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+.conversation-avatar {
+    transition: transform 0.3s;
+}
+
+.conversation-item:hover .conversation-avatar {
+    transform: scale(1.1);
+}
+
+/* Status indicators */
+.unread-badge {
+    width: 8px;
+    height: 8px;
+    background: #0095f6;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Badge para mensagens não lidas */
+.conversation-item.has-unread .conversation-name {
+    font-weight: 700;
+}
+
+/* Indicador de digitação */
+.typing-indicator-container {
+    padding: 10px 0;
+}
+
+/* Tooltips */
+[title] {
+    position: relative;
+}
+
+[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
